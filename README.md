@@ -149,5 +149,33 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 *For: MagzMayne, Psychic Investigator*  
 *Authorized by: D*  
 *Date: November 19, 2025*
+---
+
+## 📚 Organization Documentation
+
+### Planning & Strategy
+- [**OVERKOR-TEK Master Plan**](./OVERKOR-TEK_MASTER_PLAN.md) - Complete organizational blueprint
+- [**Action Checklist**](./ACTION_CHECKLIST.md) - Prioritized tasks and quick wins
+
+### Templates & Standards
+- [**README Template**](./TEMPLATE_README.md) - Standard README for all repos
+- [**Contributing Template**](./TEMPLATE_CONTRIBUTING.md) - Standard contribution guidelines
+
+### Reports
+- [**Pink Revolution Report**](./PINK_REVOLUTION_REPORT.md) - Phase 1 transformation details
+
+---
+
+## 🎯 Quick Links
+
+- [View Master Plan](./OVERKOR-TEK_MASTER_PLAN.md) - Start here for the big picture
+- [View Action Items](./ACTION_CHECKLIST.md) - Start here for immediate tasks
+- [philosopher-ai-backend](https://github.com/overkor-tek/philosopher-ai-backend) - Main backend (PINK! 💖)
+- [consciousness-bugs](https://github.com/overkor-tek/consciousness-bugs) - Bug tracker
+```
+
+4. **Scroll down** and commit:
+```
+   📚 Add documentation links to README
 
 **💖 LONG LIVE THE PINK REVOLUTION! 💖**
