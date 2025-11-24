@@ -161,6 +161,74 @@ python tools/pink_revolution.py report src/styles/
 python tools/pink_revolution.py report . | grep "Total Blue Colors Found: 0"
 ```
 
+## Available Tools
+
+### badge_generator.py
+
+Python tool for generating Pink Revolution badges for README files.
+
+#### Features
+
+- **Pink Revolution Status** - Generate status badges (Complete, In Progress, etc.)
+- **Standard Badges** - License, version, tests, documentation
+- **Custom Colors** - All badges use Pink Revolution color palette
+- **Multiple Formats** - Single badge or complete badge section
+
+#### Installation
+
+Requires Python 3.6+. No additional dependencies!
+
+```bash
+# Make executable (optional)
+chmod +x tools/badge_generator.py
+```
+
+#### Usage
+
+**Generate Pink Revolution badge:**
+```bash
+python tools/badge_generator.py --status complete
+# Output: ![Pink Revolution](https://img.shields.io/badge/...)
+```
+
+**Generate all badges for a repository:**
+```bash
+python tools/badge_generator.py --all --repo philosopher-ai-backend \
+  --status complete --colors 6 --version 1.2.0
+```
+
+**Generate single badge type:**
+```bash
+# License badge
+python tools/badge_generator.py --single license --license MIT
+
+# Version badge
+python tools/badge_generator.py --single version --version 2.0.0
+
+# Tests badge
+python tools/badge_generator.py --single tests --tests passing
+
+# Color transformation count
+python tools/badge_generator.py --single colors --colors 15
+```
+
+#### Example Output
+
+```markdown
+# philosopher-ai-backend
+
+![Pink Revolution](https://img.shields.io/badge/Pink%20Revolution-%E2%9C%93%20Complete-FF69B4?style=flat&logo=github) ![License: MIT](https://img.shields.io/badge/License-MIT-FF69B4?style=flat) ![Version](https://img.shields.io/badge/version-1.2.0-FF1493?style=flat) ![Status](https://img.shields.io/badge/status-active-FF69B4?style=flat) ![Tests](https://img.shields.io/badge/tests-passing-FF69B4?style=flat) ![Documentation](https://img.shields.io/badge/docs-90%25-FF69B4?style=flat) ![Colors Transformed](https://img.shields.io/badge/colors%20transformed-6-FF69B4?style=flat)
+```
+
+#### Badge Status Options
+
+- `complete` - ✓ Complete (Hot Pink #FF69B4)
+- `in_progress` - In Progress (Deep Pink #FF1493)
+- `pending` - Pending (Light Pink #FFB6C1)
+- `not_started` - Not Started (Medium Violet Red #C71585)
+
+---
+
 ## Future Tools (Planned)
 
 ### pink_transform.py
