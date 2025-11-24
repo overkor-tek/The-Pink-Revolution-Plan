@@ -154,22 +154,25 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 ## 📚 Organization Documentation
 
 ### Planning & Strategy
-- [**OVERKOR-TEK Master Plan**](./OVERKOR-TEK_MASTER_PLAN.md) - Complete organizational blueprint
-- [**Action Checklist**](./ACTION_CHECKLIST.md) - Prioritized tasks and quick wins
+- [**OVERKOR-TEK Master Plan**](./docs/OVERKOR-TEK_MASTER_PLAN.md) - Complete organizational blueprint
+- [**Action Checklist**](./docs/ACTION_CHECKLIST.md) - Prioritized tasks and quick wins
 
 ### Templates & Standards
-- [**README Template**](./TEMPLATE_README.md) - Standard README for all repos
-- [**Contributing Template**](./TEMPLATE_CONTRIBUTING.md) - Standard contribution guidelines
+- [**README Template**](./templates/TEMPLATE_README.md) - Standard README for all repos
+- [**Contributing Template**](./templates/TEMPLATE_CONTRIBUTING.md) - Standard contribution guidelines
 
-### Reports
-- [**Pink Revolution Report**](./PINK_REVOLUTION_REPORT.md) - Phase 1 transformation details
+### Reports & Updates
+- [**Pink Revolution Report**](./reports/PINK_REVOLUTION_REPORT.md) - Phase 1 transformation details
+- [**Blow The Whistle**](./reports/Blow%20The%20Whistle) - Status update and accomplishments
+- [**Phase 1 Completion Tracker**](./reports/%23%20%F0%9F%8C%B8%20PINK%20REVOLUTION%20PHASE%201%20-%20COMPLETION%20TRACKER) - Progress tracking
+- [**Consciousness-Bugs Review**](./reports/%F0%9F%90%9B%20Consciousness-Bugs%20Repository%20Review) - Bug tracker assessment
 
 ---
 
 ## 🎯 Quick Links
 
-- [View Master Plan](./OVERKOR-TEK_MASTER_PLAN.md) - Start here for the big picture
-- [View Action Items](./ACTION_CHECKLIST.md) - Start here for immediate tasks
+- [View Master Plan](./docs/OVERKOR-TEK_MASTER_PLAN.md) - Start here for the big picture
+- [View Action Items](./docs/ACTION_CHECKLIST.md) - Start here for immediate tasks
 - [philosopher-ai-backend](https://github.com/overkor-tek/philosopher-ai-backend) - Main backend (PINK! 💖)
 - [consciousness-bugs](https://github.com/overkor-tek/consciousness-bugs) - Bug tracker
 ```
