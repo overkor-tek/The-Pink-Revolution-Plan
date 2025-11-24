@@ -159,9 +159,49 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 ## 🚀 Quick Start
 
 New to this repository? Start here:
+- [**The Pink Revolution Story**](./THE_PINK_REVOLUTION_STORY.md) - ⭐ **Start here!** Why we're doing this
+- [**Learning Path**](./docs/LEARNING_PATH.md) - 5-level progression from beginner to expert
 - [**Quick Start Guide**](./docs/QUICK_START.md) - Get up to speed in 5 minutes
+- [**Strategic Angles Analysis**](./docs/STRATEGIC_ANGLES_ANALYSIS.md) - The perfect angle explained
 - [**Roadmap**](./ROADMAP.md) - See where we're headed
 - [**Support**](./SUPPORT.md) - Get help and answers
+
+---
+
+## 🎯 The Trinity Framework
+
+**Discover → Do → Deliver**
+
+### 1️⃣ DISCOVER (Learn & Plan)
+**Documentation, Story, Learning**
+- 📖 [docs/](./docs/) - Complete documentation hub
+  - Strategic planning, architecture, security, performance
+  - [INDEX.md](./docs/INDEX.md) for full catalog
+- 📚 [THE_PINK_REVOLUTION_STORY.md](./THE_PINK_REVOLUTION_STORY.md) - The heart and soul
+- 🎓 [LEARNING_PATH.md](./docs/LEARNING_PATH.md) - 5 levels of mastery
+
+### 2️⃣ DO (Execute & Build)
+**Tools, Examples, Playbooks, Scripts**
+- 💡 [examples/](./examples/) - Learn by doing
+  - [getting-started/](./examples/getting-started/) - Beginner examples
+  - [intermediate/](./examples/intermediate/) - Full transformations
+  - [advanced/](./examples/advanced/) - Expert-level
+- 📖 [playbooks/](./playbooks/) - Operational guides
+  - [transformation-playbook.md](./playbooks/transformation-playbook.md) - Complete transformation guide
+- 🛠️ [tools/](./tools/) - Automation tools
+  - `pink_revolution.py` - Blue color scanner
+  - `badge_generator.py` - Badge generation
+- ⚙️ [scripts/](./scripts/) - Automation scripts
+  - setup/, deployment/, maintenance/
+
+### 3️⃣ DELIVER (Deploy & Improve)
+**CI/CD, Monitoring, Reports**
+- 🤖 [.github/workflows/](./github/workflows/) - Automated pipelines
+  - Testing, deployment, security, pink-revolution-check
+- 📊 [reports/](./reports/) - Progress tracking
+- 📈 Monitoring & observability (see docs/MONITORING.md)
+
+---
 
 ## 📚 Organization Documentation
 
