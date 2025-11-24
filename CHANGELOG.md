@@ -16,6 +16,8 @@ and this project adheres to organizational versioning.
   - Pink color replacement suggestions
   - Badge generation with Pink Revolution colors
 - **Comprehensive Documentation**
+  - MONITORING.md - Complete monitoring and observability guide
+  - PERFORMANCE.md - Performance optimization guide
   - TESTING.md - Complete testing guide with standards and examples
   - CONTRIBUTION_EXAMPLES.md - 6 detailed step-by-step contribution examples
   - PROGRESS_TRACKER.md for complete progress tracking
