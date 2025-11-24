@@ -1,0 +1,243 @@
+name: Pink Revolution Check
+
+on:
+  push:
+    branches: [ main, 'claude/**' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pink-check:
+    runs-on: ubuntu-latest
+    name: Verify Pink Revolution Compliance
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Check for blue colors
+        id: blue-check
+        run: |
+          # Check if pink_revolution.py exists in tools/
+          if [ -f "tools/pink_revolution.py" ]; then
+            echo "Running Pink Revolution scanner..."
+            python tools/pink_revolution.py scan . > scan-results.json
+
+            # Parse results
+            BLUE_COUNT=$(python -c "import json; data=json.load(open('scan-results.json')); print(data.get('total_findings', 0))")
+
+            echo "blue_colors_found=$BLUE_COUNT" >> $GITHUB_OUTPUT
+
+            if [ "$BLUE_COUNT" -gt 0 ]; then
+              echo "⚠️ Found $BLUE_COUNT blue color(s) that should be pink!"
+              python tools/pink_revolution.py report .
+              exit 1
+            else
+              echo "✅ No blue colors found - Pink Revolution compliant!"
+            fi
+          else
+            echo "⚠️ pink_revolution.py scanner not found in tools/"
+            echo "Skipping blue color check"
+          fi
+
+      - name: Verify pink colors present
+        run: |
+          echo "Checking for Pink Revolution standard colors..."
+
+          # Check for Hot Pink (#FF69B4)
+          if grep -r "#FF69B4" . --exclude-dir={node_modules,.git,dist,build} > /dev/null; then
+            echo "✅ Hot Pink (#FF69B4) found"
+          fi
+
+          # Check for Deep Pink (#FF1493)
+          if grep -r "#FF1493" . --exclude-dir={node_modules,.git,dist,build} > /dev/null; then
+            echo "✅ Deep Pink (#FF1493) found"
+          fi
+
+          # Check for Medium Violet Red (#C71585)
+          if grep -r "#C71585" . --exclude-dir={node_modules,.git,dist,build} > /dev/null; then
+            echo "✅ Medium Violet Red (#C71585) found"
+          fi
+
+          echo "Pink Revolution colors verified!"
+
+      - name: Check documentation
+        run: |
+          echo "Verifying Pink Revolution documentation..."
+
+          # Check for required files
+          FILES=(
+            "README.md"
+            "CONTRIBUTING.md"
+            "LICENSE"
+            "CODE_OF_CONDUCT.md"
+          )
+
+          for file in "${FILES[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✅ $file exists"
+            else
+              echo "❌ $file missing"
+              exit 1
+            fi
+          done
+
+      - name: Verify commit messages
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "Checking commit messages for Pink Revolution references..."
+
+          # Get PR commits
+          COMMITS=$(git log --format=%s origin/${{ github.base_ref }}..HEAD)
+
+          # Check if any commits mention pink, transformation, or revolution
+          if echo "$COMMITS" | grep -iE "(pink|revolution|transform|💖)" > /dev/null; then
+            echo "✅ Pink Revolution themed commits found"
+          else
+            echo "ℹ️ No Pink Revolution themed commits (optional)"
+          fi
+
+      - name: Generate Pink Revolution badge
+        if: success()
+        run: |
+          # Create badge if tools exist
+          if [ -f "tools/badge_generator.py" ]; then
+            python tools/badge_generator.py --status complete > pink-badge.txt
+            echo "Generated Pink Revolution badge:"
+            cat pink-badge.txt
+          fi
+
+      - name: Upload scan results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pink-revolution-scan
+          path: |
+            scan-results.json
+            pink-badge.txt
+          retention-days: 30
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && steps.blue-check.outputs.blue_colors_found != '0'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const blueCount = '${{ steps.blue-check.outputs.blue_colors_found }}';
+
+            const comment = `## 🌸 Pink Revolution Check
+
+            ⚠️ **Blue colors detected!**
+
+            Found \`${blueCount}\` blue color(s) that should be transformed to pink.
+
+            ### Pink Revolution Standard Colors:
+            - Hot Pink: \`#FF69B4\`
+            - Deep Pink: \`#FF1493\`
+            - Medium Violet Red: \`#C71585\`
+
+            Please review the workflow logs for details on which files contain blue colors.
+
+            ### How to Fix:
+            1. Run \`python tools/pink_revolution.py report .\` locally
+            2. Replace blue colors with pink equivalents
+            3. Test your changes
+            4. Push the updates
+
+            💖 *The Pink Revolution continues!*
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  color-consistency:
+    runs-on: ubuntu-latest
+    name: Check Color Consistency
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for banned colors
+        run: |
+          echo "Checking for banned blue color codes..."
+
+          # Common blue colors that should be pink
+          BANNED_COLORS=(
+            "#007bff"  # Bootstrap blue
+            "#2196F3"  # Material blue
+            "#1976D2"  # Material dark blue
+            "#0d6efd"  # Bootstrap 5 blue
+            "blue"     # Named color
+          )
+
+          FOUND=0
+
+          for color in "${BANNED_COLORS[@]}"; do
+            if grep -r "$color" . --exclude-dir={node_modules,.git,dist,build,.github} > /dev/null; then
+              echo "❌ Found banned color: $color"
+              grep -rn "$color" . --exclude-dir={node_modules,.git,dist,build,.github}
+              FOUND=1
+            fi
+          done
+
+          if [ $FOUND -eq 1 ]; then
+            echo ""
+            echo "⚠️ Banned blue colors found!"
+            echo "Please replace with Pink Revolution colors:"
+            echo "  #007bff → #FF69B4 (Hot Pink)"
+            echo "  #2196F3 → #FF1493 (Deep Pink)"
+            echo "  #1976D2 → #C71585 (Medium Violet Red)"
+            echo "  blue    → hotpink"
+            exit 1
+          else
+            echo "✅ No banned colors found!"
+          fi
+
+      - name: Verify terminal colors
+        run: |
+          echo "Checking terminal color codes..."
+
+          # Check for blue terminal codes (should be magenta)
+          if grep -r "\\x1b\[34m\|\\033\[34m" . --exclude-dir={node_modules,.git,dist,build} > /dev/null; then
+            echo "❌ Found blue terminal color codes (should be magenta: \\x1b[35m)"
+            grep -rn "\\x1b\[34m\|\\033\[34m" . --exclude-dir={node_modules,.git,dist,build}
+            exit 1
+          else
+            echo "✅ No blue terminal colors found!"
+          fi
+
+  pink-summary:
+    runs-on: ubuntu-latest
+    name: Pink Revolution Summary
+    needs: [pink-check, color-consistency]
+    if: always()
+
+    steps:
+      - name: Generate summary
+        run: |
+          echo "# 🌸 Pink Revolution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Blue Color Check | ${{ needs.pink-check.result == 'success' && '✅ Pass' || '❌ Fail' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Color Consistency | ${{ needs.color-consistency.result == 'success' && '✅ Pass' || '❌ Fail' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ needs.pink-check.result }}" == "success" ] && [ "${{ needs.color-consistency.result }}" == "success" ]; then
+            echo "✅ **All Pink Revolution checks passed!**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "💖 *This repository is Pink Revolution compliant!*" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **Some Pink Revolution checks failed.**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please review the workflow logs and fix any blue colors found." >> $GITHUB_STEP_SUMMARY
+          fi

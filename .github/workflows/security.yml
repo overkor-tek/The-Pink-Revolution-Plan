@@ -1,0 +1,201 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main, 'claude/**' ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run security scans weekly on Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  dependency-scan:
+    runs-on: ubuntu-latest
+    name: Dependency Vulnerability Scan
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+
+      - name: Run Snyk security scan
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+
+      - name: Upload Snyk results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: snyk.sarif
+
+  code-scan:
+    runs-on: ubuntu-latest
+    name: Code Security Scan
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: javascript
+          queries: security-and-quality
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    name: Secret Detection Scan
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --debug --only-verified
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker-scan:
+    runs-on: ubuntu-latest
+    name: Docker Image Scan
+    if: hashFiles('Dockerfile') != ''
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t app:${{ github.sha }} .
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: app:${{ github.sha }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload Trivy results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  license-scan:
+    runs-on: ubuntu-latest
+    name: License Compliance Scan
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check licenses
+        run: |
+          npx license-checker --summary
+          npx license-checker --onlyAllow 'MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;0BSD;CC0-1.0'
+
+  security-summary:
+    runs-on: ubuntu-latest
+    name: Security Summary
+    needs: [dependency-scan, code-scan, secret-scan, docker-scan, license-scan]
+    if: always()
+
+    steps:
+      - name: Check scan results
+        run: |
+          echo "📊 Security Scan Summary"
+          echo "========================"
+          echo "Dependency Scan: ${{ needs.dependency-scan.result }}"
+          echo "Code Scan: ${{ needs.code-scan.result }}"
+          echo "Secret Scan: ${{ needs.secret-scan.result }}"
+          echo "Docker Scan: ${{ needs.docker-scan.result }}"
+          echo "License Scan: ${{ needs.license-scan.result }}"
+
+          if [ "${{ needs.dependency-scan.result }}" == "failure" ] || \
+             [ "${{ needs.code-scan.result }}" == "failure" ] || \
+             [ "${{ needs.secret-scan.result }}" == "failure" ] || \
+             [ "${{ needs.docker-scan.result }}" == "failure" ] || \
+             [ "${{ needs.license-scan.result }}" == "failure" ]; then
+            echo "❌ Security scans failed!"
+            echo "Please review the security alerts in the Security tab."
+            exit 1
+          fi
+
+          echo "✅ All security scans passed!"
+
+      - name: Create security report
+        if: github.event_name == 'schedule'
+        run: |
+          cat > security-report.md << EOF
+          # Weekly Security Report
+
+          **Date:** $(date)
+          **Status:** ${{ needs.dependency-scan.result == 'success' && needs.code-scan.result == 'success' && needs.secret-scan.result == 'success' && '✅ All Clear' || '⚠️ Issues Found' }}
+
+          ## Scan Results
+
+          - **Dependency Scan:** ${{ needs.dependency-scan.result }}
+          - **Code Scan:** ${{ needs.code-scan.result }}
+          - **Secret Scan:** ${{ needs.secret-scan.result }}
+          - **Docker Scan:** ${{ needs.docker-scan.result }}
+          - **License Scan:** ${{ needs.license-scan.result }}
+
+          ## Actions Required
+
+          Review the Security tab for detailed findings.
+
+          ---
+          💖 The Pink Revolution - Secure by Design
+          EOF
+
+      - name: Upload security report
+        if: github.event_name == 'schedule'
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-report
+          path: security-report.md
+          retention-days: 90

@@ -22,7 +22,30 @@ The-Pink-Revolution-Plan/
   - Contribution workflow
   - Common questions
 
+- **[CONTRIBUTION_EXAMPLES.md](./CONTRIBUTION_EXAMPLES.md)** - Step-by-step contribution examples
+  - 6 detailed examples (Beginner to Expert)
+  - Quick typo fix (5 min)
+  - Adding documentation (30 min)
+  - Pink Revolution transformation (2-4 hrs)
+  - Bug fix with TDD (1-2 hrs)
+  - New feature implementation (4-8 hrs)
+  - Updating dependencies (30 min - 2 hrs)
+
 ### Strategic Planning
+- **[STRATEGIC_PLAN_2025.md](./STRATEGIC_PLAN_2025.md)** - Complete year-long execution plan
+  - Q1-Q4 2025 detailed planning
+  - Weekly, monthly, quarterly breakdowns
+  - KPI tracking and metrics
+  - Risk management
+  - Priority matrix
+  - Success criteria for each phase
+
+- **[ROADMAP.md](./ROADMAP.md)** - High-level project roadmap
+  - 4-phase plan through 2025
+  - Major milestones
+  - Feature timeline
+  - Community growth strategy
+
 - **[OVERKOR-TEK_MASTER_PLAN.md](./OVERKOR-TEK_MASTER_PLAN.md)** - Complete organizational blueprint
   - Repository structure and tiers
   - Team roles and responsibilities
@@ -61,6 +84,39 @@ The-Pink-Revolution-Plan/
   - GitHub Pages configuration
   - Troubleshooting guide
   - Best practices
+
+- **[TESTING.md](./TESTING.md)** - Complete testing guide
+  - Testing philosophy and pyramid
+  - Unit, integration, E2E tests
+  - Coverage requirements (80%+)
+  - Writing and running tests
+  - CI/CD integration
+  - Pink Revolution test examples
+
+- **[MONITORING.md](./MONITORING.md)** - Monitoring and observability guide
+  - Three pillars: Metrics, Logs, Traces
+  - Application monitoring (Node.js/Express examples)
+  - Infrastructure monitoring
+  - Alert strategies (P0-P3 severity)
+  - Dashboard design
+  - Incident response procedures
+
+- **[PERFORMANCE.md](./PERFORMANCE.md)** - Performance optimization guide
+  - Performance targets (p50/p95/p99)
+  - Backend optimization (async/await, caching)
+  - Frontend performance (code splitting, lazy loading)
+  - Database optimization (indexes, queries)
+  - Caching strategies (Redis, HTTP)
+  - Network optimization (compression, CDN)
+
+- **[SECURITY_BEST_PRACTICES.md](./SECURITY_BEST_PRACTICES.md)** - Security guidelines
+  - Authentication & authorization (JWT, passwords, RBAC, MFA)
+  - Data protection (encryption at rest/in transit)
+  - API security (rate limiting, SQL injection prevention)
+  - Infrastructure security (env vars, Docker, database)
+  - Code security (error handling, file uploads)
+  - Incident response playbook
+  - GDPR compliance
 
 ## 📊 Reports (reports/)
 
@@ -104,6 +160,15 @@ The-Pink-Revolution-Plan/
   - Pull request process
   - Issue reporting
 
+- **[TEMPLATE_API_DOCUMENTATION.md](../templates/TEMPLATE_API_DOCUMENTATION.md)** - REST API documentation template
+  - API overview and base URLs
+  - Authentication (JWT)
+  - Response format standards
+  - Endpoint documentation examples
+  - Data models
+  - Error codes
+  - Code examples (cURL, JavaScript, Python)
+
 ## 🛠️ Tools (tools/)
 
 ### Automation Scripts
@@ -112,6 +177,13 @@ The-Pink-Revolution-Plan/
   - Suggests pink replacements
   - Supports hex, RGB, named, and terminal colors
   - Generates detailed reports
+  - See [tools/README.md](../tools/README.md) for usage
+
+- **[badge_generator.py](../tools/badge_generator.py)** - Pink Revolution badge generator
+  - Generates Pink Revolution status badges
+  - Creates standard badges (license, version, tests)
+  - Uses Pink Revolution color palette
+  - Multiple formats (single badge or complete section)
   - See [tools/README.md](../tools/README.md) for usage
 
 ## 🔧 GitHub Configuration (.github/)
@@ -125,10 +197,44 @@ The-Pink-Revolution-Plan/
 ### Pull Request Template
 - **[pull_request_template.md](../.github/pull_request_template.md)** - Standard PR template with checklist
 
+### GitHub Actions Workflows
+- **[markdown-validation.yml](../.github/workflows/markdown-validation.yml)** - Validate markdown files and links
+- **[repository-health.yml](../.github/workflows/repository-health.yml)** - Weekly repository health checks
+- **[test.yml](../.github/workflows/test.yml)** - Run tests on all PRs and pushes
+  - Unit, integration, and E2E tests
+  - Coverage reporting
+  - Multi-version Node.js testing
+- **[deploy.yml](../.github/workflows/deploy.yml)** - Automated deployment
+  - Staging and production deployments
+  - Health checks and smoke tests
+  - Rollback capability
+- **[security.yml](../.github/workflows/security.yml)** - Security scanning
+  - Dependency vulnerability scanning
+  - Code security analysis
+  - Secret detection
+  - Docker image scanning
+  - License compliance
+- **[pink-revolution-check.yml](../.github/workflows/pink-revolution-check.yml)** - Pink Revolution compliance
+  - Blue color detection
+  - Pink color verification
+  - Color consistency checks
+  - Documentation verification
+
 ## 📄 Root Files
 
 ### Essential Files
 - **[README.md](../README.md)** - Repository introduction and navigation
+- **[ROADMAP.md](../ROADMAP.md)** - Project roadmap and future plans
+  - 4-phase plan through 2025
+  - Q1: Foundation & Planning
+  - Q2: Expansion & Transformation
+  - Q3: Community & Documentation
+  - Q4: Innovation & Advanced Features
+- **[SUPPORT.md](../SUPPORT.md)** - Getting help and support
+  - How to get help
+  - Common questions
+  - Resource links
+  - Response time expectations
 - **[CONTRIBUTING.md](../CONTRIBUTING.md)** - How to contribute to this repository
 - **[CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md)** - Community guidelines (Contributor Covenant 2.1)
 - **[SECURITY.md](../SECURITY.md)** - Security policy and vulnerability reporting
