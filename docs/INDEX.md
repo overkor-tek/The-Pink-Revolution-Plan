@@ -16,6 +16,22 @@ The-Pink-Revolution-Plan/
 ## 📚 Core Documentation (docs/)
 
 ### Getting Started
+
+⭐ **Start Here:** [THE_PINK_REVOLUTION_STORY.md](../THE_PINK_REVOLUTION_STORY.md) - The heart and soul
+  - Why pink? Why revolution? Why now?
+  - "A puzzle for my daughter... she got stolen"
+  - Personal to universal transformation
+  - Every commit is a love letter
+  - Join the revolution
+
+- **[LEARNING_PATH.md](./LEARNING_PATH.md)** - Progressive mastery framework (5 levels)
+  - ⭐ Level 1: First Contribution (30 min)
+  - ⭐⭐ Level 2: Pink Revolution Basics (2 hours)
+  - ⭐⭐⭐ Level 3: Full Transformation (8 hours)
+  - ⭐⭐⭐⭐ Level 4: Infrastructure Master (20 hours)
+  - ⭐⭐⭐⭐⭐ Level 5: Community Leader (ongoing)
+  - Achievement badges and certification program
+
 - **[QUICK_START.md](./QUICK_START.md)** - 5-minute quick start guide for new contributors
   - Mission overview
   - First day checklist
@@ -32,6 +48,15 @@ The-Pink-Revolution-Plan/
   - Updating dependencies (30 min - 2 hrs)
 
 ### Strategic Planning
+
+🎯 **The Perfect Angle:** [STRATEGIC_ANGLES_ANALYSIS.md](./STRATEGIC_ANGLES_ANALYSIS.md) - Multi-perspective strategic analysis
+  - 7 strategic angles analyzed (Tutorial, Book, Enterprise, Organization, Bootstrap, Economic, Elegance)
+  - Synthesis: Progressive Mastery Framework
+  - Comparative analysis with scoring
+  - Trinity structure: Discover → Do → Deliver
+  - Immediate action plan
+  - Why this approach is lighter, faster, stronger, more elegant, less expensive
+
 - **[STRATEGIC_PLAN_2025.md](./STRATEGIC_PLAN_2025.md)** - Complete year-long execution plan
   - Q1-Q4 2025 detailed planning
   - Weekly, monthly, quarterly breakdowns
@@ -117,6 +142,18 @@ The-Pink-Revolution-Plan/
   - Code security (error handling, file uploads)
   - Incident response playbook
   - GDPR compliance
+
+✨ **[DESIGN_PRINCIPLES.md](./DESIGN_PRINCIPLES.md)** - Beautiful simplicity in code
+  - 7 principles of elegance
+  - Convention over Configuration
+  - Progressive Enhancement
+  - Composability
+  - Self-Documenting Code
+  - Sensible Defaults
+  - Explicit over Implicit
+  - Fail Fast, Recover Gracefully
+  - Code examples (good vs bad)
+  - Elegance checklist and scoring
 
 ## 📊 Reports (reports/)
 
