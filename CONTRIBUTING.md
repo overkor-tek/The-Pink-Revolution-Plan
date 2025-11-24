@@ -1,4 +1,3 @@
-markdown
 # Contributing to The Pink Revolution Plan
 
 Thank you for your interest in contributing to The Pink Revolution Plan - the documentation hub for the overkor-tek Consciousness Revolution! 💖
@@ -7,11 +6,11 @@ This repository serves as the central documentation and organizational hub for a
 
 ## 🎺 What This Repo Contains
 
-- **Pink Revolution documentation** - Mission, vision, change reports
-- **Organizational plans** - Master plan, roadmaps, structure
-- **Templates** - Reusable templates for other repos
-- **Action checklists** - Prioritized task lists
-- **Standards** - Color standards, contribution guidelines
+- **docs/** - Core documentation (Master Plan, Action Checklist)
+- **reports/** - Pink Revolution reports, status updates, assessments
+- **templates/** - Reusable templates for other repos (README, CONTRIBUTING)
+- **.github/** - Issue templates, PR templates, GitHub configuration
+- **Root files** - README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, LICENSE, CHANGELOG
 
 ## 🚀 How to Contribute
 
@@ -20,12 +19,17 @@ This repository serves as the central documentation and organizational hub for a
 **For typos, corrections, or clarifications:**
 1. Click the pencil icon on any file
 2. Make your changes
-3. Submit a pull request
+3. Submit a pull request using the PR template
 
 **For new documentation:**
-1. Create an issue describing what you want to add
+1. Create an issue using the "Documentation Update" template
 2. Wait for approval
-3. Submit your documentation
+3. Submit your documentation with a pull request
+
+**For bugs or feature requests:**
+1. Use the appropriate issue template (Bug Report, Feature Request, or Documentation)
+2. Fill out all relevant sections
+3. Add appropriate labels and priority
 
 ### Updating Progress
 
@@ -52,10 +56,14 @@ All documentation in this repo follows The Pink Revolution standards:
 - Include examples when helpful
 - Bold important terms
 
-### File Naming
-- Use UPPERCASE for major documents (README.md, CONTRIBUTING.md)
-- Use descriptive names (PINK_REVOLUTION_REPORT.md)
-- Use underscores for multi-word files
+### File Organization
+- **Root directory:** Only essential files (README, LICENSE, CODE_OF_CONDUCT, SECURITY, CHANGELOG, CONTRIBUTING)
+- **docs/:** Strategic planning documents and organizational blueprints
+- **reports/:** Progress reports, status updates, and assessments
+- **templates/:** Reusable templates for standardizing other repositories
+- **.github/:** Issue/PR templates and GitHub-specific configuration
+- Use descriptive names with underscores for multi-word files
+- Avoid spaces in filenames for better compatibility
 
 ### Structure
 - Start with a clear title
@@ -85,12 +93,13 @@ All documentation in this repo follows The Pink Revolution standards:
 
 ## 📊 Updating Checklists
 
-When updating ACTION_CHECKLIST.md or similar files:
+When updating docs/ACTION_CHECKLIST.md or similar files:
 
 1. **Mark completed items:** Change `[ ]` to `[x]`
 2. **Add completion notes:** Add dates or details
 3. **Update percentages:** Recalculate completion rates
 4. **Note achievements:** Add to accomplishments section
+5. **Update CHANGELOG.md:** Document significant changes
 
 ## 🔗 Cross-Repo Contributions
 

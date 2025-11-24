@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Pink Revolution Discussion
+    url: https://github.com/overkor-tek/The-Pink-Revolution-Plan/discussions
+    about: Start a general discussion about the Pink Revolution or organization strategy
+  - name: Security Issue
+    url: https://github.com/overkor-tek/The-Pink-Revolution-Plan/security
+    about: Report a security vulnerability (please do not use public issues for security concerns)

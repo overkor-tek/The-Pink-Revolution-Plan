@@ -175,10 +175,7 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 - [View Action Items](./docs/ACTION_CHECKLIST.md) - Start here for immediate tasks
 - [philosopher-ai-backend](https://github.com/overkor-tek/philosopher-ai-backend) - Main backend (PINK! 💖)
 - [consciousness-bugs](https://github.com/overkor-tek/consciousness-bugs) - Bug tracker
-```
 
-4. **Scroll down** and commit:
-```
-   📚 Add documentation links to README
+---
 
 **💖 LONG LIVE THE PINK REVOLUTION! 💖**
