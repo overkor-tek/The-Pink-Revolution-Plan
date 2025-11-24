@@ -188,6 +188,29 @@ New to this repository? Start here:
 
 ---
 
+## 🌍 Community & Growth
+
+Join the revolution and grow with us!
+
+### 🎯 For Contributors
+- [**CONTRIBUTORS.md**](./CONTRIBUTORS.md) - 💖 Hall of fame & recognition system
+- [**WEEKLY_CHALLENGES.md**](./WEEKLY_CHALLENGES.md) - 🏆 Weekly challenges & leaderboard
+- [**SHOWCASE.md**](./SHOWCASE.md) - 🎨 Before/after transformation examples
+- [**CONTRIBUTING.md**](./CONTRIBUTING.md) - 📋 How to contribute
+
+### 📣 For Promoters
+- [**SOCIAL_MEDIA_KIT.md**](./SOCIAL_MEDIA_KIT.md) - 📱 Social media templates & hashtags
+- [**VIDEO_SCRIPTS.md**](./VIDEO_SCRIPTS.md) - 🎥 Video content scripts & ideas
+- [**LAUNCH_ANNOUNCEMENT.md**](./LAUNCH_ANNOUNCEMENT.md) - 🚀 Official launch announcement
+
+### 🤖 Community Automation
+- **Welcome Bot** - Auto-welcomes first-time contributors
+- **Auto-Labeler** - Intelligently labels PRs
+- **Recognition System** - Celebrates milestones & achievements
+- **Badges & Levels** - Gamified contribution tracking (⭐ to ⭐⭐⭐⭐⭐)
+
+---
+
 ## 🎯 The Trinity Framework
 
 **Discover → Do → Deliver**
