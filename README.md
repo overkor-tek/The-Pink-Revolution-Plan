@@ -160,6 +160,8 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 
 New to this repository? Start here:
 - [**Quick Start Guide**](./docs/QUICK_START.md) - Get up to speed in 5 minutes
+- [**Roadmap**](./ROADMAP.md) - See where we're headed
+- [**Support**](./SUPPORT.md) - Get help and answers
 
 ## 📚 Organization Documentation
 

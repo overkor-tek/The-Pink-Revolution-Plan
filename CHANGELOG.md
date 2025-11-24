@@ -8,6 +8,9 @@ and this project adheres to organizational versioning.
 ## [Unreleased]
 
 ### Added
+- ROADMAP.md with 4-phase project plan through 2025
+- SUPPORT.md with comprehensive help and support information
+- FUNDING.yml placeholder for future sponsorship options
 - GitHub Actions workflows for automation
   - markdown-validation.yml for link checking and linting
   - repository-health.yml for automated health checks (runs weekly)
