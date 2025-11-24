@@ -37,6 +37,31 @@ The-Pink-Revolution-Plan/
   - Completion status
   - Team accomplishments
 
+- **[PROGRESS_TRACKER.md](./PROGRESS_TRACKER.md)** - Comprehensive progress tracking
+  - Phase completion status
+  - Repository transformation metrics
+  - Immediate priorities
+  - Accomplishments to date
+  - Success criteria
+
+### Technical Documentation
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Complete system architecture
+  - Organization structure
+  - Repository architecture
+  - Technology stack
+  - System integration
+  - Data flow diagrams
+  - Infrastructure overview
+  - Pink Revolution standards
+
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deployment procedures
+  - philosopher-ai-backend deployment
+  - consciousness-revolution setup
+  - GitHub Pages configuration
+  - Troubleshooting guide
+  - Best practices
+
 ## 📊 Reports (reports/)
 
 ### Transformation Reports
@@ -78,6 +103,16 @@ The-Pink-Revolution-Plan/
   - Code standards
   - Pull request process
   - Issue reporting
+
+## 🛠️ Tools (tools/)
+
+### Automation Scripts
+- **[pink_revolution.py](../tools/pink_revolution.py)** - Blue to Pink color scanner
+  - Scans codebases for blue colors
+  - Suggests pink replacements
+  - Supports hex, RGB, named, and terminal colors
+  - Generates detailed reports
+  - See [tools/README.md](../tools/README.md) for usage
 
 ## 🔧 GitHub Configuration (.github/)
 
