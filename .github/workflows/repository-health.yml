@@ -1,0 +1,92 @@
+name: Repository Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run weekly on Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    name: Check Repository Health
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check essential files exist
+        run: |
+          echo "Checking for essential files..."
+          files=(
+            "README.md"
+            "LICENSE"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
+            "SECURITY.md"
+            "CHANGELOG.md"
+            ".gitignore"
+            ".editorconfig"
+          )
+
+          missing=()
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              missing+=("$file")
+            fi
+          done
+
+          if [ ${#missing[@]} -ne 0 ]; then
+            echo "::error::Missing essential files: ${missing[*]}"
+            exit 1
+          fi
+
+          echo "✅ All essential files present"
+
+      - name: Check directory structure
+        run: |
+          echo "Checking directory structure..."
+          dirs=(
+            "docs"
+            "reports"
+            "templates"
+            ".github/ISSUE_TEMPLATE"
+          )
+
+          missing=()
+          for dir in "${dirs[@]}"; do
+            if [ ! -d "$dir" ]; then
+              missing+=("$dir")
+            fi
+          done
+
+          if [ ${#missing[@]} -ne 0 ]; then
+            echo "::error::Missing directories: ${missing[*]}"
+            exit 1
+          fi
+
+          echo "✅ All required directories present"
+
+      - name: Check for files with problematic names
+        run: |
+          echo "Checking for files with spaces or special characters..."
+          # Find files with spaces or emoji (excluding .git directory)
+          problematic=$(find . -type f -not -path "./.git/*" \( -name "* *" -o -name "*[[:emoji:]]*" \) 2>/dev/null || true)
+
+          if [ -n "$problematic" ]; then
+            echo "::warning::Found files with spaces or special characters:"
+            echo "$problematic"
+            echo "Consider renaming these files to use underscores or hyphens"
+          else
+            echo "✅ No problematic file names found"
+          fi
+
+      - name: Summary
+        run: |
+          echo "## Repository Health Check Results" >> $GITHUB_STEP_SUMMARY
+          echo "✅ All essential files present" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Directory structure correct" >> $GITHUB_STEP_SUMMARY
+          echo "💖 Pink Revolution standards maintained!" >> $GITHUB_STEP_SUMMARY

@@ -15,6 +15,13 @@ The-Pink-Revolution-Plan/
 
 ## 📚 Core Documentation (docs/)
 
+### Getting Started
+- **[QUICK_START.md](./QUICK_START.md)** - 5-minute quick start guide for new contributors
+  - Mission overview
+  - First day checklist
+  - Contribution workflow
+  - Common questions
+
 ### Strategic Planning
 - **[OVERKOR-TEK_MASTER_PLAN.md](./OVERKOR-TEK_MASTER_PLAN.md)** - Complete organizational blueprint
   - Repository structure and tiers
@@ -40,19 +47,19 @@ The-Pink-Revolution-Plan/
   - Testing recommendations
 
 ### Status Updates
-- **[Blow The Whistle](../reports/Blow%20The%20Whistle)** - Major status update and accomplishments
+- **[Blow The Whistle](../reports/blow_the_whistle.md)** - Major status update and accomplishments
   - Team achievements
   - Hours worked
   - Tasks completed
   - Repository assessments
 
-- **[Phase 1 Completion Tracker](../reports/%23%20%F0%9F%8C%B8%20PINK%20REVOLUTION%20PHASE%201%20-%20COMPLETION%20TRACKER)** - Phase 1 progress tracking
+- **[Phase 1 Completion Tracker](../reports/phase_1_completion_tracker.md)** - Phase 1 progress tracking
   - Completion metrics
   - Repository status
   - Next steps
 
 ### Repository Assessments
-- **[Consciousness-Bugs Repository Review](../reports/%F0%9F%90%9B%20Consciousness-Bugs%20Repository%20Review)** - Bug tracker assessment
+- **[Consciousness-Bugs Repository Review](../reports/consciousness_bugs_review.md)** - Bug tracker assessment
   - Structure analysis
   - Recommendations
   - Pink transformation opportunities
@@ -120,7 +127,7 @@ The-Pink-Revolution-Plan/
 → Review [CHANGELOG.md](../CHANGELOG.md)
 
 **Understand team progress:**
-→ Read [Blow The Whistle](../reports/Blow%20The%20Whistle)
+→ Read [Blow The Whistle](../reports/blow_the_whistle.md)
 
 ## 🔗 Related Repositories
 

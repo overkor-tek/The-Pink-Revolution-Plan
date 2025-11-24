@@ -1,5 +1,10 @@
 # The-Pink-Revolution-Plan
-Blow The Whistle
+
+[![Repository Health](https://github.com/overkor-tek/The-Pink-Revolution-Plan/actions/workflows/repository-health.yml/badge.svg)](https://github.com/overkor-tek/The-Pink-Revolution-Plan/actions/workflows/repository-health.yml)
+[![Markdown Validation](https://github.com/overkor-tek/The-Pink-Revolution-Plan/actions/workflows/markdown-validation.yml/badge.svg)](https://github.com/overkor-tek/The-Pink-Revolution-Plan/actions/workflows/markdown-validation.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-pink.svg)](https://opensource.org/licenses/MIT)
+[![Pink Revolution](https://img.shields.io/badge/Pink-Revolution-FF69B4?style=flat&logo=github)](https://github.com/overkor-tek)
+
 # 💖 THE PINK REVOLUTION - TRANSFORMATION REPORT 💖
 
 ## Mission Status: ✅ COMPLETE
@@ -151,6 +156,11 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 *Date: November 19, 2025*
 ---
 
+## 🚀 Quick Start
+
+New to this repository? Start here:
+- [**Quick Start Guide**](./docs/QUICK_START.md) - Get up to speed in 5 minutes
+
 ## 📚 Organization Documentation
 
 ### Planning & Strategy
@@ -163,9 +173,9 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 
 ### Reports & Updates
 - [**Pink Revolution Report**](./reports/PINK_REVOLUTION_REPORT.md) - Phase 1 transformation details
-- [**Blow The Whistle**](./reports/Blow%20The%20Whistle) - Status update and accomplishments
-- [**Phase 1 Completion Tracker**](./reports/%23%20%F0%9F%8C%B8%20PINK%20REVOLUTION%20PHASE%201%20-%20COMPLETION%20TRACKER) - Progress tracking
-- [**Consciousness-Bugs Review**](./reports/%F0%9F%90%9B%20Consciousness-Bugs%20Repository%20Review) - Bug tracker assessment
+- [**Blow The Whistle**](./reports/blow_the_whistle.md) - Status update and accomplishments
+- [**Phase 1 Completion Tracker**](./reports/phase_1_completion_tracker.md) - Progress tracking
+- [**Consciousness-Bugs Review**](./reports/consciousness_bugs_review.md) - Bug tracker assessment
 
 ---
 
