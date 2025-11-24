@@ -1,0 +1,116 @@
+name: Auto Label PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Auto label PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+
+            const labels = new Set();
+
+            // Analyze changed files to determine labels
+            for (const file of files) {
+              const path = file.filename;
+
+              // Documentation changes
+              if (path.endsWith('.md')) {
+                labels.add('documentation');
+              }
+
+              // Template changes
+              if (path.startsWith('templates/')) {
+                labels.add('templates');
+              }
+
+              // Script changes
+              if (path.startsWith('scripts/')) {
+                labels.add('automation');
+              }
+
+              // Tool changes
+              if (path.startsWith('tools/')) {
+                labels.add('tools');
+              }
+
+              // Example changes
+              if (path.startsWith('examples/')) {
+                labels.add('examples');
+              }
+
+              // Playbook changes
+              if (path.startsWith('playbooks/')) {
+                labels.add('playbooks');
+              }
+
+              // Workflow changes
+              if (path.startsWith('.github/workflows/')) {
+                labels.add('ci-cd');
+              }
+
+              // Config changes
+              if (path.startsWith('.github/') && !path.startsWith('.github/workflows/')) {
+                labels.add('configuration');
+              }
+
+              // Strategic docs
+              if (path.includes('STRATEGIC') || path.includes('PLAN') || path.includes('ROADMAP')) {
+                labels.add('strategy');
+              }
+
+              // Reports
+              if (path.startsWith('reports/')) {
+                labels.add('reports');
+              }
+            }
+
+            // Add size label based on changes
+            const totalChanges = files.reduce((sum, file) => sum + file.changes, 0);
+            if (totalChanges < 10) {
+              labels.add('size/XS');
+            } else if (totalChanges < 50) {
+              labels.add('size/S');
+            } else if (totalChanges < 200) {
+              labels.add('size/M');
+            } else if (totalChanges < 500) {
+              labels.add('size/L');
+            } else {
+              labels.add('size/XL');
+            }
+
+            // Apply labels
+            if (labels.size > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: Array.from(labels),
+              });
+            }
+
+            // Add comment with summary
+            const labelList = Array.from(labels).map(l => `\`${l}\``).join(', ');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `🏷️ **Auto-labeled:** ${labelList}\n\n📊 **Total changes:** ${totalChanges} lines across ${files.length} file(s)`,
+            });

@@ -1,0 +1,140 @@
+# Pink Revolution Label Configuration
+# Use with: gh label create -f .github/labels.yml
+
+# Type Labels
+- name: "documentation"
+  color: "FF69B4"
+  description: "Documentation improvements or additions"
+
+- name: "templates"
+  color: "FF1493"
+  description: "Changes to templates"
+
+- name: "automation"
+  color: "C71585"
+  description: "Scripts and automation improvements"
+
+- name: "tools"
+  color: "DB7093"
+  description: "Tool development or enhancements"
+
+- name: "examples"
+  color: "FFB6C1"
+  description: "New or improved examples"
+
+- name: "playbooks"
+  color: "FFC0CB"
+  description: "Playbook updates or additions"
+
+- name: "ci-cd"
+  color: "FF69B4"
+  description: "CI/CD pipeline changes"
+
+- name: "configuration"
+  color: "FF1493"
+  description: "Configuration file changes"
+
+- name: "strategy"
+  color: "C71585"
+  description: "Strategic planning documents"
+
+- name: "reports"
+  color: "DB7093"
+  description: "Progress reports and analytics"
+
+# Size Labels
+- name: "size/XS"
+  color: "E0FFE0"
+  description: "Extra small PR (< 10 lines)"
+
+- name: "size/S"
+  color: "B2FFB2"
+  description: "Small PR (10-49 lines)"
+
+- name: "size/M"
+  color: "80FF80"
+  description: "Medium PR (50-199 lines)"
+
+- name: "size/L"
+  color: "4DFF4D"
+  description: "Large PR (200-499 lines)"
+
+- name: "size/XL"
+  color: "00FF00"
+  description: "Extra large PR (500+ lines)"
+
+# Priority Labels
+- name: "priority/critical"
+  color: "FF0000"
+  description: "Critical priority - needs immediate attention"
+
+- name: "priority/high"
+  color: "FF6B6B"
+  description: "High priority"
+
+- name: "priority/medium"
+  color: "FFB366"
+  description: "Medium priority"
+
+- name: "priority/low"
+  color: "FFE066"
+  description: "Low priority"
+
+# Status Labels
+- name: "status/blocked"
+  color: "DC143C"
+  description: "Blocked by something"
+
+- name: "status/in-progress"
+  color: "FFA500"
+  description: "Currently being worked on"
+
+- name: "status/needs-review"
+  color: "FF69B4"
+  description: "Needs review from maintainers"
+
+- name: "status/ready-to-merge"
+  color: "00FF7F"
+  description: "Approved and ready to merge"
+
+# Contribution Type Labels
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed"
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or request"
+
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "transformation"
+  color: "FF69B4"
+  description: "Pink Revolution transformation work"
+
+- name: "community"
+  color: "FF1493"
+  description: "Community building and engagement"
+
+- name: "learning"
+  color: "FFB6C1"
+  description: "Learning materials and educational content"
+
+# Special Labels
+- name: "🎉 first-contribution"
+  color: "FFD700"
+  description: "First contribution from this user"
+
+- name: "💖 pink-champion"
+  color: "FF69B4"
+  description: "Exceptional contribution to the Pink Revolution"
+
+- name: "🚀 quick-win"
+  color: "00FF7F"
+  description: "Can be completed quickly (< 1 hour)"

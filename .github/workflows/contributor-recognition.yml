@@ -1,0 +1,159 @@
+name: Contributor Recognition
+
+on:
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  recognize:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check if first contribution
+        uses: actions/github-script@v6
+        id: check-first
+        with:
+          script: |
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              per_page: 100
+            });
+
+            const userPRs = prs.filter(pr =>
+              pr.user.login === context.payload.pull_request.user.login &&
+              pr.merged_at
+            );
+
+            const isFirst = userPRs.length === 1;
+            return isFirst;
+
+      - name: Celebrate first merged PR
+        if: steps.check-first.outputs.result == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const username = context.payload.pull_request.user.login;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## 🎉 CONGRATULATIONS @${username}! 🎉
+
+Your first PR has been merged! 🚀
+
+### 🏆 Achievement Unlocked: First Contribution!
+
+You're now officially a Pink Revolution contributor! 💖
+
+**What this means:**
+- ✅ You're in the contributors list
+- ✅ You've earned the "First Contribution" badge
+- ✅ You're part of the Pink Revolution history
+- ✅ You're making a real impact!
+
+**What's next?**
+- 🌟 Check out [WEEKLY_CHALLENGES.md](../WEEKLY_CHALLENGES.md) for more tasks
+- 📈 Level up with [LEARNING_PATH.md](../docs/LEARNING_PATH.md)
+- 🤝 Help other contributors
+- 💬 Share your experience on social media (#PinkRevolution)
+
+**Your Stats:**
+- 🎯 PRs Merged: 1
+- 🏅 Current Level: ⭐ Contributor
+- 🎖️ Badges: First Contribution
+
+**Next Milestone:**
+- 5 merged PRs → ⭐⭐ Regular Contributor
+
+Thank you for being part of the revolution! 💖
+
+---
+
+*Want to be featured? Share your contribution story in Discussions!*`
+            });
+
+            // Add label
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: ['🎉 first-contribution']
+            });
+
+      - name: Check for milestone contributions
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const username = context.payload.pull_request.user.login;
+
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              per_page: 100
+            });
+
+            const userMergedPRs = prs.filter(pr =>
+              pr.user.login === username && pr.merged_at
+            ).length;
+
+            const milestones = {
+              5: '⭐⭐ Regular Contributor',
+              10: '⭐⭐⭐ Dedicated Contributor',
+              20: '⭐⭐⭐⭐ Core Contributor',
+              50: '⭐⭐⭐⭐⭐ Pink Revolution Champion'
+            };
+
+            if (milestones[userMergedPRs]) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `## 🌟 MILESTONE ACHIEVEMENT! 🌟
+
+@${username} has reached **${userMergedPRs} merged PRs!**
+
+### 🏆 ${milestones[userMergedPRs]} Unlocked!
+
+This is a HUGE accomplishment! 🎉
+
+Your dedication to The Pink Revolution is inspiring. Thank you for your continued contributions! 💖
+
+**Your Impact:**
+- 💪 ${userMergedPRs} merged pull requests
+- 🌍 Helping transform the world pink
+- 👥 Inspiring others to contribute
+- 🚀 Driving the revolution forward
+
+**Special Recognition:**
+You've been added to the [Pink Champions](../CONTRIBUTORS.md) list! 🏅
+
+Keep up the amazing work! 💖
+
+---
+
+*Share your journey! We'd love to feature your story.*`
+              });
+
+              // Add champion label if 50+ PRs
+              if (userMergedPRs >= 50) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.pull_request.number,
+                  labels: ['💖 pink-champion']
+                });
+              }
+            }

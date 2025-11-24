@@ -1,0 +1,62 @@
+labels: ["enhancement", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💖 Share Your Idea!
+
+        We love hearing new ideas for The Pink Revolution. Whether it's a new feature, a process improvement, or a creative way to grow the community—we want to hear it!
+
+  - type: textarea
+    id: idea-description
+    attributes:
+      label: "What's your idea?"
+      description: "Describe your idea in detail"
+      placeholder: "I think we should..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: idea-category
+    attributes:
+      label: "Category"
+      description: "What area does this idea relate to?"
+      options:
+        - Documentation
+        - Automation/Tools
+        - Community Building
+        - Learning Resources
+        - Templates
+        - CI/CD
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Expected Impact"
+      description: "What impact would this have?"
+      placeholder: "This would help by..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "Implementation Ideas"
+      description: "How could this be implemented?"
+      placeholder: "We could..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: "Contribution"
+      description: "Would you be willing to help implement this?"
+      options:
+        - label: "I'd like to work on this idea"
+        - label: "I can help with documentation"
+        - label: "I can help with code review"
+        - label: "I can help test this"

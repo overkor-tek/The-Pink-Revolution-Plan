@@ -1,0 +1,117 @@
+name: Welcome New Contributors
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Welcome new contributors
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const isFirstIssue = context.payload.issue && context.payload.issue.author_association === 'FIRST_TIME_CONTRIBUTOR';
+            const isFirstPR = context.payload.pull_request && context.payload.pull_request.author_association === 'FIRST_TIME_CONTRIBUTOR';
+
+            if (isFirstIssue) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## 💖 Welcome to The Pink Revolution! 💖
+
+Thank you for opening your first issue! We're thrilled to have you here.
+
+### 🎯 What happens next?
+
+1. A maintainer will review your issue shortly
+2. We may ask clarifying questions
+3. If approved, we'll assign it (or you can work on it!)
+
+### 🚀 Want to contribute?
+
+- Check out our [Quick Start Guide](./QUICK_START.md) (30 minutes)
+- Read [The Pink Revolution Story](./THE_PINK_REVOLUTION_STORY.md) (5 minutes)
+- Browse our [Learning Path](./docs/LEARNING_PATH.md) (progressive levels)
+- See [contribution examples](./examples/getting-started/)
+
+### 💡 New to open source?
+
+No problem! We have examples for every skill level:
+- ⭐ **Beginner**: 5-30 minute tasks
+- ⭐⭐ **Intermediate**: 2-8 hour projects
+- ⭐⭐⭐ **Advanced**: Multi-day contributions
+
+### 💪 Community Resources
+
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - How to contribute
+- [SUPPORT.md](./SUPPORT.md) - Get help
+- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) - Our values
+
+**Every contributor matters. Every pink commit amplifies the signal.** 🚀
+
+Welcome to the revolution! 💖`
+              });
+            }
+
+            if (isFirstPR) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## 💖 Congratulations on your first Pull Request! 💖
+
+You've just made your first contribution to The Pink Revolution! 🎉
+
+### 🎯 What happens next?
+
+1. Our CI/CD pipeline will run automated checks:
+   - ✅ Pink compliance (blue color detection)
+   - ✅ Tests (if applicable)
+   - ✅ Visual regression
+   - ✅ Accessibility (WCAG 2.1 AA)
+   - ✅ Security scan
+   - ✅ Build verification
+
+2. A maintainer will review your code
+3. We may request changes or approve immediately
+4. Once approved and merged, you're officially a Pink Revolution contributor! 🏆
+
+### 📋 PR Checklist
+
+Make sure you've:
+- [ ] Filled out the PR template completely
+- [ ] Included before/after screenshots (if applicable)
+- [ ] Updated documentation (if needed)
+- [ ] Added tests (if applicable)
+- [ ] Verified all CI checks pass
+
+### 🌟 Join the Community
+
+This is just the beginning! Consider:
+- Working on another issue
+- Helping other contributors
+- Sharing The Pink Revolution with your network
+- Providing feedback on documentation
+
+### 🎓 Level Up
+
+You're on your way to earning badges:
+- 🥉 **First Contribution**: You're here!
+- 🥈 **Regular Contributor**: 5+ merged PRs
+- 🥇 **Core Contributor**: 20+ merged PRs
+- 💎 **Pink Revolution Champion**: 50+ merged PRs
+
+**Thank you for making the world more pink!** 💖
+
+We're excited to see what you build next! 🚀`
+              });
+            }
