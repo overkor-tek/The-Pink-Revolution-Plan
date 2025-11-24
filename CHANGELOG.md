@@ -8,13 +8,29 @@ and this project adheres to organizational versioning.
 ## [Unreleased]
 
 ### Added
+- GitHub Actions workflows for automation
+  - markdown-validation.yml for link checking and linting
+  - repository-health.yml for automated health checks (runs weekly)
+- Quick Start Guide (docs/QUICK_START.md) for new contributors
+- Repository status badges to README.md
+- Configuration files for markdown validation tools
+- .editorconfig for consistent coding styles
 - GitHub issue templates (bug report, feature request, documentation)
 - GitHub pull request template
 - CHANGELOG.md to track repository changes
 - Documentation index in docs/ directory
 
 ### Changed
-- Improved README.md formatting
+- Standardized file naming in reports/ directory
+  - Removed spaces and emojis from filenames
+  - All report files now use lowercase with underscores
+- Updated all file references in README.md and docs/INDEX.md
+- Enhanced README.md with Quick Start section and badges
+- Improved CONTRIBUTING.md with updated paths and guidelines
+
+### Fixed
+- File naming issues causing compatibility problems
+- Broken or URL-encoded links to report files
 
 ## [2024-11-24] - Repository Reorganization
 
