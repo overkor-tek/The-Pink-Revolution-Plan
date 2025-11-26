@@ -1,0 +1,62 @@
+# =============================================================================
+# RAILWAY DEPLOYMENT CONFIGURATION
+# =============================================================================
+# Overkor-tek Cloud Foundation - Railway Template
+# Place this file in the root of your service repository
+# =============================================================================
+
+[build]
+# Build command - customize per project
+builder = "NIXPACKS"
+
+# Node.js projects
+# buildCommand = "npm ci && npm run build"
+
+# Python projects
+# buildCommand = "pip install -r requirements.txt"
+
+[deploy]
+# Start command - customize per project
+# startCommand = "npm start"
+
+# Health check path
+healthcheckPath = "/health"
+
+# Restart policy
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+# Grace period for shutdown (seconds)
+gracePeriodSeconds = 30
+
+# Number of replicas (for scaling)
+numReplicas = 1
+
+[env]
+# Static environment variables
+NODE_ENV = "production"
+CLOUD_ENV = "prod"
+BRAND_PRIMARY_COLOR = "#FF1493"
+
+# Reference Railway-provided variables
+# PORT = "${PORT}"
+# DATABASE_URL = "${DATABASE_URL}"
+
+# =============================================================================
+# RAILWAY-SPECIFIC NOTES
+# =============================================================================
+#
+# Railway automatically provides:
+# - PORT: The port your app should listen on
+# - DATABASE_URL: If you have a database attached
+# - RAILWAY_ENVIRONMENT: Current environment name
+# - RAILWAY_SERVICE_NAME: Name of the service
+# - RAILWAY_PROJECT_NAME: Name of the project
+#
+# Best practices:
+# 1. Never commit secrets to this file
+# 2. Use Railway dashboard for sensitive variables
+# 3. Use environment-specific config for different deployments
+# 4. Enable health checks for reliability
+#
+# =============================================================================
