@@ -91,6 +91,11 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 | [Blow The Whistle](./BLOW_THE_WHISTLE.md) | Original status update |
 | [Contributing (Alt)](./CONTRIBUTING-Pink-Revolution-Plan.md) | Alternative contributing guide |
 
+### 📁 Technical Docs
+| Document | Purpose |
+|----------|---------|
+| [Color Standards](./docs/COLOR_STANDARDS.md) | Official color palette & implementation |
+
 ---
 
 ## 🎨 PINK REVOLUTION COLOR PALETTE
