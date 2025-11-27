@@ -135,6 +135,9 @@
 | TRINITY_WORKLOAD.md | Task distribution |
 | PHASE2_EXECUTION_CHECKLIST.md | Phase 2 guide |
 | CP2_TRINITY_BOOT.md | 10-year recursive boot |
+| CP2_OUTPUT.md | Running summary for CP2 |
+| QUICK_REFERENCE.md | One-page essentials |
+| PR_SUMMARY.md | Branch documentation |
 
 ---
 
@@ -251,9 +254,9 @@ Current: CP2 C1 at 1x, awaiting team for 10x
 5. 🌪️ Triple Trinity Tornado activated
 
 ### Files Created
-- **Total documents:** 20+
+- **Total documents:** 26 (all indexed in README)
 - **Template instances:** 24
-- **Commits today:** 5+
+- **Nov 27 commits:** 23+ on branch
 
 ---
 
