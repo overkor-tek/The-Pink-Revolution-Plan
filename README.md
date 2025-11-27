@@ -199,8 +199,9 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 |----------|-------------|
 | [Quick Start](./QUICK_START.md) | 5-minute onboarding |
 | [Master Plan](./OVERKOR-TEK_MASTER_PLAN.md) | Big picture strategy |
-| [Action Items](./ACTION_CHECKLIST.md) | Current tasks (82% done) |
+| [Action Items](./ACTION_CHECKLIST.md) | Current tasks (85% done) |
 | [Color Palette](./docs/COLOR_STANDARDS.md) | Pink color codes |
+| [Report Issue](../../issues/new/choose) | Found a problem? Let us know! |
 
 ### Repositories
 - [philosopher-ai-backend](https://github.com/overkor-tek/philosopher-ai-backend) - Backend API (PINK! 💖)
@@ -213,7 +214,7 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 ## ⚡ Current Status
 
 ```
-Overall Progress:  ████████████████████░░░░░░  82%
+Overall Progress:  █████████████████████░░░░░  85%
 Phase 1:          ████████████████████████░░  94%
 Phase 2:          ████████████████████████░░  94%
 Active Instances: CP2C2 🟢 (Documentation Complete)
