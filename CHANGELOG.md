@@ -22,17 +22,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CP2_TRINITY_BOOT.md - Recursive boot protocol
 - PHASE2_EXECUTION_CHECKLIST.md - Phase 2 execution guide
 - CP2_OUTPUT.md - Running summary for CP2 computer
+- QUICK_REFERENCE.md - One-page essentials card
+- PR_SUMMARY.md - Branch work documentation
 - Populated PINK_REVOLUTION_COMPLETE_TEAM_REPORT_WITH_ALL_STATS.md
 
 #### 📚 Documentation
-- Major README.md overhaul with documentation index
+- Major README.md overhaul with documentation index (26 files linked)
 - Added status badges (Phase 1, Phase 2, Operation Purple)
 - Created comprehensive documentation links
+- Added Archive section for historical files
+- Updated ACTION_CHECKLIST with complete Nov 27 details
 
 #### 🔧 Changed
-- Renamed files with problematic filenames to proper .md format
-- Fixed .gitignore (was named "Add .gitignore file")
-- Updated CP2_OUTPUT.md with session work
+- Renamed 5 files with problematic filenames to proper .md format:
+  - CODE_OF_CONDUCT (1).md → CODE_OF_CONDUCT.md
+  - "# 🌸 PINK REVOLUTION..." → PHASE1_COMPLETION_TRACKER.md
+  - "Blow The Whistle" → BLOW_THE_WHISTLE.md
+  - "🐛 Consciousness-Bugs..." → CONSCIOUSNESS_BUGS_REVIEW.md
+  - "Add .gitignore file" → .gitignore
+- Updated CP2_OUTPUT.md with session work (6 sessions tracked)
 
 #### 🗑️ Removed
 - Empty placeholder files (operation-purple-security)
