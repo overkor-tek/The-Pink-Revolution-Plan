@@ -94,8 +94,11 @@
 | Session 9 | CP2C2 | Updated README.md with doc links | ✅ |
 | Session 10 | CP2C2 | Repository cleanup - fixed improper filenames | ✅ |
 | Session 10 | CP2C2 | Merged .gitignore, renamed 2 files | ✅ |
+| Session 10 | CP2C2 | Created CODE_REVIEW.md | ✅ |
+| Session 10 | CP2C2 | Created docs/TESTING_GUIDE.md | ✅ |
+| Session 10 | CP2C2 | Updated ACTION_CHECKLIST.md to v4.0 | ✅ |
 
-**TOTAL: 14 files created, 3 improved (README, .gitignore, filenames), 13 commits, Overall at 82%**
+**TOTAL: 16 files created, 4 improved, 15 commits, Overall at 84%**
 
 ---
 
