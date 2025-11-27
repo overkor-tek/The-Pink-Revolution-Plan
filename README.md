@@ -54,9 +54,11 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 | Document | Purpose |
 |----------|---------|
 | [Pink Revolution Report](./PINK_REVOLUTION_REPORT.md) | Phase 1 details |
+| [Phase 1 Completion Tracker](./PHASE1_COMPLETION_TRACKER.md) | Phase 1 task tracking |
 | [Infrastructure Complete](./PINK_REVOLUTION_INFRASTRUCTURE_COMPLETE.md) | Nov 25 progress report |
 | [Team Report with Stats](./PINK_REVOLUTION_COMPLETE_TEAM_REPORT_WITH_ALL_STATS.md) | Comprehensive metrics |
 | [Bug Tracker Review](./BUG_TRACKER_REVIEW.md) | consciousness-bugs assessment |
+| [Consciousness Bugs Review](./CONSCIOUSNESS_BUGS_REVIEW.md) | Bug repo detailed analysis |
 
 ### 🌪️ Trinity Coordination
 | Document | Purpose |
@@ -66,6 +68,7 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 | [CP2 Trinity Boot](./CP2_TRINITY_BOOT.md) | 10-year recursive boot protocol |
 | [Phase 2 Execution Checklist](./PHASE2_EXECUTION_CHECKLIST.md) | Step-by-step Phase 2 guide |
 | [CP2 Output](./CP2_OUTPUT.md) | CP2 computer summary |
+| [PR Summary](./PR_SUMMARY.md) | Branch work documentation |
 
 ### 📝 Templates
 | Document | Purpose |
@@ -81,6 +84,12 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 | [Security Policy](./SECURITY.md) | Vulnerability reporting |
 | [Changelog](./CHANGELOG.md) | Version history |
 | [Code of Conduct](./CODE_OF_CONDUCT.md) | Consciousness Evolution Standards |
+
+### 📜 Archive
+| Document | Purpose |
+|----------|---------|
+| [Blow The Whistle](./BLOW_THE_WHISTLE.md) | Original status update |
+| [Contributing (Alt)](./CONTRIBUTING-Pink-Revolution-Plan.md) | Alternative contributing guide |
 
 ---
 
