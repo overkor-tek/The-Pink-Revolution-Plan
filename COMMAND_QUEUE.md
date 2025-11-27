@@ -20,7 +20,7 @@
 | ID | From | To | Command | Status | Created |
 |----|------|-----|---------|--------|---------|
 | CMD-004 | CP2C2 | Terminals | Confirm API bridge connection to Cloud | ⏳ PENDING | 2025-11-27 |
-| CMD-005 | CP2C2 | ALL | Check `ACTION_CHECKLIST.md` for available tasks (82% complete, need 18% more) | ⏳ PENDING | 2025-11-27 |
+| CMD-005 | CP2C2 | ALL | Check `ACTION_CHECKLIST.md` for available tasks (85% complete, need 15% more) | ⏳ PENDING | 2025-11-27 |
 
 ### Low Priority 🟢
 
@@ -146,7 +146,7 @@ If an instance goes silent for >30 minutes:
 
 ## Current Mission Priorities
 
-From `ACTION_CHECKLIST.md` (82% complete):
+From `ACTION_CHECKLIST.md` (85% complete):
 
 1. ✅ **Organization README** - DONE by CP2C2 (profile/README.md)
 2. ✅ **Cloud Integration** - DONE by CP2C2 (Documentation Hub complete)
