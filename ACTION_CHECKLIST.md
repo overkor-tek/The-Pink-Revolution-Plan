@@ -68,7 +68,7 @@
 - [x] Add FAQ.md ✅ Created Nov 27
 - [ ] Create docs/ folder with:
   - [x] COLOR_STANDARDS.md ✅ Created Nov 27
-  - [ ] ARCHITECTURE_OVERVIEW.md
+  - [x] ARCHITECTURE_OVERVIEW.md ✅ Created Nov 27
   - [ ] DEPLOYMENT_GUIDE.md
 
 ### Each Repository
