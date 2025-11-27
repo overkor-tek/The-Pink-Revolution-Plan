@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Quick Start Guide
+    url: https://github.com/overkor-tek/The-Pink-Revolution-Plan/blob/main/QUICK_START.md
+    about: New here? Start with the 5-minute onboarding guide!
+  - name: FAQ
+    url: https://github.com/overkor-tek/The-Pink-Revolution-Plan/blob/main/FAQ.md
+    about: Check if your question is already answered
+  - name: Glossary
+    url: https://github.com/overkor-tek/The-Pink-Revolution-Plan/blob/main/GLOSSARY.md
+    about: Understand Pink Revolution terminology
