@@ -48,3 +48,41 @@ out/
 PERSONAL_NOTES.md
 SCRATCH.md
 TODO_PRIVATE.md
+DRAFT_*.md
+PRIVATE_*.md
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing coverage
+coverage/
+.nyc_output/
+
+# npm cache
+.npm
+
+# ESLint cache
+.eslintcache
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# System files
+*.pid
+*.seed
+*.pid.lock
+
+# Draft/Private directories
+drafts/
+private/
+
+# Cache files
+*.cache
