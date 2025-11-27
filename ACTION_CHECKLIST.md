@@ -65,7 +65,7 @@
 - [x] Add PROJECT_STRUCTURE.md ✅ Created Nov 27 (in docs/)
 - [x] Add ROADMAP.md ✅ Created Nov 27
 - [ ] Add TEAM.md
-- [ ] Add FAQ.md
+- [x] Add FAQ.md ✅ Created Nov 27
 - [ ] Create docs/ folder with:
   - [x] COLOR_STANDARDS.md ✅ Created Nov 27
   - [ ] ARCHITECTURE_OVERVIEW.md
