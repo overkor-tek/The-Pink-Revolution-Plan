@@ -63,7 +63,7 @@
 
 ### Documentation Hub (The-Pink-Revolution-Plan)
 - [x] Add PROJECT_STRUCTURE.md ✅ Created Nov 27 (in docs/)
-- [ ] Add ROADMAP.md
+- [x] Add ROADMAP.md ✅ Created Nov 27
 - [ ] Add TEAM.md
 - [ ] Add FAQ.md
 - [ ] Create docs/ folder with:

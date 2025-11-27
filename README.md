@@ -46,6 +46,7 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 | Document | Purpose |
 |----------|---------|
 | [Quick Reference](./QUICK_REFERENCE.md) | **One-page essentials** |
+| [Roadmap](./ROADMAP.md) | Project phases and milestones |
 | [OVERKOR-TEK Master Plan](./OVERKOR-TEK_MASTER_PLAN.md) | Complete organizational blueprint |
 | [Action Checklist](./ACTION_CHECKLIST.md) | Prioritized tasks and progress tracking |
 | [Pink Revolution Phase 2 Plan](./PINK_REVOLUTION_PHASE2_PLAN.md) | Color transformation guide |
