@@ -185,7 +185,9 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 
 ### 📝 Reports
 - [**Pink Revolution Report**](./PINK_REVOLUTION_REPORT.md) - Phase 1 details
+- [**Pink Revolution Phase 1 Tracker**](./PINK_REVOLUTION_PHASE1_TRACKER.md) - Phase 1 completion tracker
 - [**Pink Revolution Phase 2 Plan**](./PINK_REVOLUTION_PHASE2_PLAN.md) - Phase 2 strategy
+- [**Consciousness-Bugs Review**](./CONSCIOUSNESS_BUGS_REVIEW.md) - Bug tracker assessment
 
 ---
 

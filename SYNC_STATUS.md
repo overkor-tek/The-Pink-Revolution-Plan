@@ -92,8 +92,10 @@
 | Session 7 | CP2C2 | Marked missed completions - 82% | ✅ |
 | Session 8 | CP2C2 | Final sync to 82% | ✅ |
 | Session 9 | CP2C2 | Updated README.md with doc links | ✅ |
+| Session 10 | CP2C2 | Repository cleanup - fixed improper filenames | ✅ |
+| Session 10 | CP2C2 | Merged .gitignore, renamed 2 files | ✅ |
 
-**TOTAL: 14 files created, 1 improved (README), 11 commits, Overall at 82%**
+**TOTAL: 14 files created, 3 improved (README, .gitignore, filenames), 13 commits, Overall at 82%**
 
 ---
 
