@@ -81,6 +81,7 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 ### 🏢 Organization
 | Document | Purpose |
 |----------|---------|
+| [Team Structure](./TEAM.md) | Team roles and responsibilities |
 | [Organization Profile](./ORGANIZATION_PROFILE.md) | Org identity guide |
 | [Contributing Guide](./CONTRIBUTING.md) | How to contribute here |
 | [Security Policy](./SECURITY.md) | Vulnerability reporting |
