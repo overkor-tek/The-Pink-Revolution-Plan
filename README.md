@@ -173,7 +173,9 @@ The Pink Revolution has begun. This is not just a color change. This is a statem
 - [**Contributing**](./CONTRIBUTING.md) - Contribution guidelines
 - [**Code Review**](./CODE_REVIEW.md) - Code review guidelines
 - [**Testing Guide**](./docs/TESTING_GUIDE.md) - Testing procedures
+- [**Security**](./SECURITY.md) - Security policy
 - [**Code of Conduct**](./CODE_OF_CONDUCT.md) - Consciousness Evolution Standards
+- [**Changelog**](./CHANGELOG.md) - Version history (v4.0.0)
 
 ### ⚡ Triple Trinity Tornado (Cloud Coordination)
 - [**CP2C2 Integration**](./CP2C2_CLOUD_INTEGRATION.md) - Trinity architecture
