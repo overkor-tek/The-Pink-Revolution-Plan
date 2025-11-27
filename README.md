@@ -95,6 +95,7 @@ Transform all blue colors to pink across overkor-tek repositories. Build conscio
 | Document | Purpose |
 |----------|---------|
 | [Color Standards](./docs/COLOR_STANDARDS.md) | Official color palette & implementation |
+| [Project Structure](./docs/PROJECT_STRUCTURE.md) | Repository & file organization |
 
 ---
 
