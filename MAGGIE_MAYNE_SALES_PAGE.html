@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maggie Mayne — Soul-Lit™ | The Maggie Way™</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a0a1a 0%, #2d1b2e 50%, #1a0a1a 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: radial-gradient(ellipse at center, rgba(255,105,180,0.1) 0%, transparent 70%);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #FF69B4, #FFD700, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #FF69B4;
+            font-style: italic;
+            max-width: 600px;
+        }
+        
+        .brands {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .brand-tag {
+            background: rgba(255, 105, 180, 0.2);
+            border: 1px solid #FF69B4;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 2rem;
+        }
+        
+        .offerings-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .offering-card {
+            background: rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .offering-card:hover {
+            border-color: #FF69B4;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+        }
+        
+        .offering-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .offering-name {
+            font-size: 1.4rem;
+            color: #FF69B4;
+        }
+        
+        .offering-price {
+            font-size: 1.8rem;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .offering-desc {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+        
+        .offering-includes {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF69B4, #C71585);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+        }
+        
+        .domain-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .signature {
+            border: 2px solid #FFD700;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #FF69B4, transparent);
+            margin: 3rem 0;
+        }
+        
+        .money-target {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .money-target h3 {
+            color: #FFD700;
+            font-size: 1.5rem;
+        }
+        
+        .money-target .amount {
+            font-size: 3rem;
+            color: #FF69B4;
+            font-weight: bold;
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 105, 180, 0.05);
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .payment-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-btn:hover {
+            background: rgba(255, 105, 180, 0.2);
+            border-color: #FF69B4;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        footer span { color: #FF69B4; }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .offering-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>✨ Maggie Mayne ✨</h1>
+        <p class="tagline">Blending laughter with wisdom, sarcasm with soul, authenticity with abundance.</p>
+        <div class="brands">
+            <span class="brand-tag">💗 Soul-Lit™</span>
+            <span class="brand-tag">🌸 The Maggie Way™</span>
+            <span class="brand-tag">⚖️ Justice Without Limits</span>
+        </div>
+    </section>
+    
+    <div class="section">
+        <div class="money-target">
+            <h3>✨ Abundance Target ✨</h3>
+            <div class="amount">$11,111</div>
+            <p>57 bookings to freedom</p>
+        </div>
+    </div>
+    
+    <section class="section">
+        <h2 class="section-title">💗 Signature Experiences</h2>
+        <div class="offerings-grid">
+            <div class="offering-card signature">
+                <span class="domain-badge">Domain 1: Heart</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">✨ An Evening with Maggie Mayne</h3>
+                    <span class="offering-price">$888</span>
+                </div>
+                <p class="offering-desc">A 3-hour immersive experience blending healing, oracle guidance, somatic movement, and soul-level connection.</p>
+                <p class="offering-includes">Includes: Oracle reading, guided meditation, energy work, refreshments. Up to 8 guests.</p>
+                <a href="#contact" class="cta-btn">Book Your Evening</a>
+            </div>
+            
+            <div class="offering-card signature">
+                <span class="domain-badge">Domain 1: Heart</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">🌸 Feed Your Soul</h3>
+                    <span class="offering-price">$444</span>
+                </div>
+                <p class="offering-desc">A 2-hour mini retreat combining nourishment for body and soul.</p>
+                <p class="offering-includes">Includes: Light bodywork, oracle guidance, breathwork, intention setting. Up to 4 guests.</p>
+                <a href="#contact" class="cta-btn">Feed Your Soul</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="section">
+        <h2 class="section-title">💆 Healing Sessions</h2>
+        <div class="offerings-grid">
+            <div class="offering-card">
+                <span class="domain-badge">Domain 3: Healing</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">🙌 90-Minute Session</h3>
+                    <span class="offering-price">$222</span>
+                </div>
+                <p class="offering-desc">The signature healing experience. All the things your body and soul need.</p>
+                <p class="offering-includes">Modalities: Massage, Cranial Sacral, Lymphatic Drainage, Energy Healing, Reiki, Flower Essences, Sound Healing, Crystal Work</p>
+                <a href="#contact" class="cta-btn">Book Session</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 2: Consciousness</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">🧘 Private Somatic Experience</h3>
+                    <span class="offering-price">$222</span>
+                </div>
+                <p class="offering-desc">One-on-one somatic movement, breathwork, and body awareness.</p>
+                <p class="offering-includes">Includes: Nervous system regulation, embodiment practices, intuitive guidance</p>
+                <a href="#contact" class="cta-btn">Book Private</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 2: Consciousness</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">🌀 Group Somatic Experience</h3>
+                    <span class="offering-price">$111</span>
+                </div>
+                <p class="offering-desc">Movement and breathwork in community. Up to 8 guests (+$11 each additional).</p>
+                <a href="#contact" class="cta-btn">Join Group</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="section">
+        <h2 class="section-title">🔮 Oracle Readings</h2>
+        <div class="offerings-grid">
+            <div class="offering-card">
+                <span class="domain-badge">Domain 4: Oracle</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">🌟 Full Transmission</h3>
+                    <span class="offering-price">$111</span>
+                </div>
+                <p class="offering-desc">60 minutes. Full spread. Deep dive. Recorded for you to keep.</p>
+                <a href="#contact" class="cta-btn">Get Full Transmission</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 4: Oracle</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">💫 Soul Session</h3>
+                    <span class="offering-price">$66</span>
+                </div>
+                <p class="offering-desc">30 minutes. Multiple questions. Clarity and guidance.</p>
+                <a href="#contact" class="cta-btn">Book Soul Session</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 4: Oracle</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">⚡ Quick Clarity</h3>
+                    <span class="offering-price">$33</span>
+                </div>
+                <p class="offering-desc">15 minutes. One burning question. Straight to the point.</p>
+                <a href="#contact" class="cta-btn">Get Quick Clarity</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="section">
+        <h2 class="section-title">🌉 Consulting Services</h2>
+        <div class="offerings-grid">
+            <div class="offering-card">
+                <span class="domain-badge">Domain 11: Bridge | NEW!</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">🌸 The 19-Domain Map</h3>
+                    <span class="offering-price">$144</span>
+                </div>
+                <p class="offering-desc">Your complete personal sacred architecture. Map all your offerings, gifts, and expressions onto the Flower of Life geometry.</p>
+                <p class="offering-includes">Includes: 60-min consultation, complete architecture document, custom visualization, archetype mapping, task list</p>
+                <a href="#contact" class="cta-btn">Map Your Domains</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 11: Bridge</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">⚖️ Full Case Strategy</h3>
+                    <span class="offering-price">$444</span>
+                </div>
+                <p class="offering-desc">Comprehensive pro se legal strategy. Pattern recognition. Documentation system.</p>
+                <a href="#contact" class="cta-btn">Get Strategy</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 11: Bridge</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">📋 Case Analysis Report</h3>
+                    <span class="offering-price">$222</span>
+                </div>
+                <p class="offering-desc">Written analysis of your case with identified patterns and recommended actions.</p>
+                <a href="#contact" class="cta-btn">Get Analysis</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 11: Bridge</span>
+                <div class="offering-header">
+                    <h3 class="offering-name">📞 Pro Se Strategy Session</h3>
+                    <span class="offering-price">$111/hr</span>
+                </div>
+                <p class="offering-desc">Live consultation for your pro se legal journey.</p>
+                <a href="#contact" class="cta-btn">Book Session</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="section">
+        <h2 class="section-title">📚 Books (Signed Copies)</h2>
+        <div class="offerings-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="offering-card">
+                <span class="domain-badge">Domain 5: Wisdom</span>
+                <h3 class="offering-name">The Maggie Way: Holistic Healing</h3>
+                <span class="offering-price">$22</span>
+                <a href="#contact" class="cta-btn">Order</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 5: Wisdom</span>
+                <h3 class="offering-name">Pull Up Your Socks</h3>
+                <span class="offering-price">$22</span>
+                <a href="#contact" class="cta-btn">Order</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 5: Wisdom</span>
+                <h3 class="offering-name">Weathering "They"</h3>
+                <span class="offering-price">$22</span>
+                <a href="#contact" class="cta-btn">Order</a>
+            </div>
+            
+            <div class="offering-card">
+                <span class="domain-badge">Domain 5: Wisdom | Coming Soon</span>
+                <h3 class="offering-name">Weathering "Law"</h3>
+                <span class="offering-price">$33</span>
+                <a href="#contact" class="cta-btn">Pre-Order</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">💗 Ready to Begin?</h2>
+        <p style="max-width: 500px; margin: 0 auto 2rem;">Send a message to book your session or ask any questions.</p>
+        
+        <div class="payment-methods">
+            <a href="mailto:maggieolanie@yahoo.com" class="payment-btn">📧 Email</a>
+            <a href="#" class="payment-btn">💳 PayPal</a>
+            <a href="#" class="payment-btn">💵 Venmo</a>
+            <a href="#" class="payment-btn">💰 CashApp</a>
+        </div>
+        
+        <p style="margin-top: 2rem; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+            Update payment links with your actual usernames
+        </p>
+    </section>
+    
+    <footer>
+        <p>Built with <span>💗</span> | Soul-Lit™ | The Maggie Way™ | Justice Without Limits</p>
+        <p style="margin-top: 0.5rem;">Part of The Pink Revolution 🌸</p>
+    </footer>
+</body>
+</html>
